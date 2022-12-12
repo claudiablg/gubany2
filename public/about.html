@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+  <html>
+    <head>
+        <title>Gubany — À propos </title>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="description" content="Demo Project">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <base href="/a-propos">
+
+        <link rel="icon" type="image/x-icon" href="favicon.ico">
+        <link rel="preload" href="//cdn.shopify.com/s/files/1/0060/2069/4106/t/91/assets/GT-Super-Display-Light-2021.woff2?v=178763354481978482081640124403" as="font" type="font/woff2" crossorigin="">
+        <meta data-rh="true" property="og:url" content="https://www.schick-toikka.com/saol-display">
+        <link rel="stylesheet" href="style.css">
+
+        <link rel="stylesheet" href="https://use.typekit.net/xhm7umg.css">
+        <link rel="stylesheet" href="https://use.typekit.net/ldi2faj.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+        <style type="text/css"></style>
+    </head>
+    <body class="about">
+        <div class="main-container">
+            <nav class="header navbar-active white">
+                <a class="logo" href="/">
+                    <div>
+                        <img class="navbar-logo-black visible" src="./images/gubany-logo-black.svg"/><img class="navbar-logo-white" src="./images/gubany-logo-white.svg"></img>
+                    </div>
+                </a>
+                <div class="menu-btn">
+                    <div class="line1"></div>
+                    <div class="line2"></div>
+                    <div class="line3"></div>
+                </div>
+                <ul class="header-nav">
+                    <li class="label"><a href="a-propos" class="underline">À propos</a></li> 
+                    <li class="label"><a href="services">Services</a></li>
+                    <li class="label"><a href="contact">Contact</a></li>
+                </ul>           
+            </nav>
+            <section class="about-intro">
+                <div class="img-container zoom-in image1" >
+                    <img src="/images/about-1.jpg"/>
+                </div>
+                <div class="title">
+                    <p class="subtitle">À PROPOS</p>
+                    <h1>Naomie Gubany, <br> <span class="italique"> Styliste Capillaire </span></h1>
+                </div>
+                <div class="img-container zoom-in image2">
+                    <img src="/images/about-2.jpg"/>
+                </div>
+                <p class="description intro-content">Gubany est un salon de coiffure qui se distingue par sa grande écoute envers la clientèle. Nous sommes fières d'offrir des soins personnalisés de la plus haute qualité à chacun d'entre vous.</p>
+            </section>
+            <section class="about-info fade-in">
+                <div class="col-2">
+                    <div class="img-container zoom-in">
+                        <img src="/images/about-6.jpg"/>
+                    </div>
+                </div>
+                <div class="col-1">
+                    <div class="text-content">
+                        <p class="description">J’ai réalisé une formation à l’académie de coiffure tornade depuis maintenant plus de 5 ans, une expérience enrichissante qui m’a permis d’apprendre par des professionnels reconnus dans le domaine de la coiffure.
+                        À travers ces dernières années, j’ai su acquérir beaucoup  d’expérience et développer une grande passion envers les dernières tendances de coiffure. </p>
+                    </div>
+                    <div class="text-content">
+                        <p class="description">Je suis connue par mes amis pour être observatrice, attentive, créative, curieuse et gentille. Dans mon travail, j’aime y combiner ces qualités par l’entremise d’une approche unique face à mon métier.
+                        J’ai une capacité innée à redonner de la beauté aux cheveux, avec une volonté et une vision d’affiner et de revitaliser mes expériences et celles de mes clients.</p>
+                    </div>
+                </div>
+            </section>
+            <section class="about-images">
+                <div class="col-1">
+                    <div href="a-propos" class="img-container zoom-in">
+                        <img src="/images/about-3.jpg"/>
+                    </div>
+                </div>
+                <div class="col-2">
+                    <div href="a-propos" class="img-container zoom-in">
+                        <img src="/images/about-4.jpg"/>
+                    </div>
+                </div>
+            </section>
+            <!-- FOOTER -->
+                <footer class="footer">
+                    <div class="footer-container">
+                        <ul class="footer-nav">
+                            <li><a href="a-propos">À propos</a></li> 
+                            <li><a href="services">Services</a></li>
+                            <li><a href="contact">Contact</a></li>
+                        </ul>
+                        <ul class="footer-social">
+                            <li><a target=”_blank” href="https://www.instagram.com/gubanyshair">Instagram</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-copyright">
+                        © Gubany 2022. All rights reserved.
+                    </div>
+                </footer>  
+        </div>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script type="text/javascript" src="index.js"></script>
+        <script>
+
+
+            $(document).ready(function(){
+                
+            //hamburger menu navbar
+            const headerNav = document.querySelector('.header-nav');
+                const menu = document.querySelector('.menu-btn');
+                const mobileTransparent= document.querySelector('.transparent');
+                const mobileWhite= document.querySelector('.white');
+                const mobileHeader = document.querySelector('.header');
+                const logoWhite = document.querySelector('.navbar-logo-white');
+                const logoBlack = document.querySelector('.navbar-logo-black');
+                const linkUnderline = document.querySelector('.underline');
+
+                menu.addEventListener('click', () => {
+                    headerNav.classList.toggle('mobile-menu-active');
+                        mobileHeader.classList.toggle('mobile-menu-active');
+                        menu.classList.toggle('close');
+                        linkUnderline.style.borderBottom = "none";
+                        return;
+                })
+            })
+
+
+            // change the position to fixed white navbar on scroll          REVOIR - ne fonctionne pas, mais fonctionne sur la page d'Accueil et Services, pas à propos
+            const header = document.querySelector('.header');
+            const headers = document.querySelectorAll('.header');
+
+            const fixedNavbarOptions = {
+                rootMargin: "-80px",
+                threshold: 0
+            };
+
+            const fixedNavbarOnScroll = new IntersectionObserver(function(
+                entries) {
+                entries.forEach(entry => {
+                    if(entry.isIntersecting) {                
+                        header.classList.add("fixed");
+                        // fixedNavbarOnScroll.unobserve(entry.target);
+                    } else {
+                    return;
+                    }
+                });
+            },
+            fixedNavbarOptions);
+
+            headers.forEach(header => {
+                fixedNavbarOnScroll.observe(header);
+            })
+        </script>
+    </body>
+  </html>

@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+  <html>
+    <head>
+        <title>Gubany — Styliste Capillaire </title>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="description" content="Demo Project">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <base href="/">
+
+        <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <link rel="stylesheet" href="https://use.typekit.net/xhm7umg.css">
+        <link rel="stylesheet" href="https://use.typekit.net/ldi2faj.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <style type="text/css"></style>
+    </head>
+    <body class="home">
+        <div class="main-container">
+            <nav class="header navbar-active transparent">
+                <a class="logo" href="/">
+                    <div>
+                        <img class="navbar-logo-black visible" src="./images/gubany-logo-black.svg"/><img class="navbar-logo-white" src="./images/gubany-logo-white.svg"></img>
+                    </div>
+                </a>
+                <div class="menu-btn">
+                    <div class="line1"></div>
+                    <div class="line2"></div>
+                    <div class="line3"></div>
+                </div>
+                <ul class="header-nav">
+                    <li class="label"><a href="a-propos">À propos</a></li> 
+                    <li class="label"><a href="services">Services</a></li>
+                    <li class="label"><a href="contact">Contact</a></li>
+                </ul>           
+            </nav>
+            <main>
+                <div class="preloader">
+                </div>
+                <div class="parallax hero-section">
+                    <h1 class="hero-text tricks">
+                        Révéler votre beauté unique.
+                    </h1>
+                </div>
+                <section id="hero-anchor" class="services-intro">
+                    <div class="col-1">
+                    <div class="text-content fade-in">
+                        <p class="subtitle">Soins capillaires</p>
+                        <h1>Soins des cheveux <br> aussi <span class="italique">uniques</span> que <span class="italique"> vous</span>.</h1>
+                    </div>
+                    <div class="text-content fade-in">
+                        <p class="description">Nous offrons des soins des cheveux spécialement conçu pour vous — toujours avec le désir de faire ressortir votre beauté naturelle et en gardant à l'esprit votre satisfaction. Pour nous, chacun d'entre vous possède une beauté unique.</p>
+                        <div>
+                            <a href="services" class="link-dark">
+                                <span></span>Découvrir les soins
+                            </a>
+                        </div>
+                    </div>
+                    </div>
+                    <div class="col-2">
+                    <a href="services" class="img-container zoom-in fade-in">
+                        <img src="/images/services-1.jpg"/>
+                    </a>
+                </div>
+                </section>
+                <section class="img-section">
+                    <img src="/images/about-5.jpg"/>
+                </section> 
+                <section class="about-intro fade-in">
+                    <div class="col-1">
+                        <div class="text-content">
+                            <p class="subtitle">À PROPOS</p>
+                            <h1>Naomie Gubany, <br> <span class="italique"> Styliste Capillaire </span></h1>
+                        </div>
+                        <div class="text-content">
+                            <p class="description">Gubany est un salon de coiffure qui se distingue par sa grande écoute envers la clientèle. Nous sommes fières d'offrir des soins personnalisés de la plus haute qualité à chacun d'entre vous.</p>
+                            <div>
+                                <a href="a-propos" class="link-dark">
+                                    <span></span>Lire la suite
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-2">
+                        <a href="a-propos" class="img-container zoom-in">
+                            <img src="/images/about-1.jpg"/>
+                        </a>
+                    </div>
+                </section>
+                <!-- FOOTER -->
+                <footer class="footer background-color">
+                    <div class="footer-container">
+                        <ul class="footer-nav">
+                            <li><a href="a-propos">À propos</a></li> 
+                            <li><a href="services">Services</a></li>
+                            <li><a href="contact">Contact</a></li>
+                        </ul>
+                        <ul class="footer-social">
+                            <li><a target=”_blank” href="https://www.instagram.com/gubanyshair">Instagram</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-copyright">
+                        © Gubany 2022. All rights reserved.
+                    </div>
+                </footer>  
+            </main>
+            
+        </div>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/gh/stevenschobert/instafeed.js@2.0.0rc1/src/instafeed.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide"></script>
+        <script type="text/javascript" src="index.js"></script>
+        <script type="text/javascript">
+
+        $(document).ready(function(){
+        
+            //hamburger menu navbar
+            const headerNav = document.querySelector('.header-nav');
+            const menu = document.querySelector('.menu-btn');
+            const mobileTransparent= document.querySelector('.transparent');
+            const mobileWhite= document.querySelector('.white');
+            const mobileHeader = document.querySelector('.header');
+            const logoWhite = document.querySelector('.navbar-logo-white');
+            const logoBlack = document.querySelector('.navbar-logo-black');
+
+            menu.addEventListener('click', () => {
+                headerNav.classList.toggle('mobile-menu-active');
+                if(mobileTransparent){
+                    mobileHeader.classList.toggle('mobile-menu-active');
+                    menu.classList.toggle('close');
+                    logoWhite.classList.toggle('visible');
+                    logoBlack.classList.toggle('visible');
+                    console.log('hello')
+                    return;
+                }
+                else if(mobileWhite){
+                    mobileHeader.classList.toggle('mobile-menu-active');
+                    menu.classList.toggle('close');
+                    // logoWhite.classList.toggle('visible');
+                    // logoBlack.classList.toggle('visible');
+                }
+                else {
+                    console.log('hi')
+                    mobileHeader.classList.toggle('mobile-menu-active');
+                    menu.classList.toggle('close');
+                    // logoWhite.classList.toggle('visible');
+                    // logoBlack.classList.toggle('visible');
+                }             
+
+            })
+
+        })
+
+        //hero image animation
+        var preloader = document.querySelector('.preloader');
+        preloader.classList.add('preloader-animation')
+
+        // change transparent navbar on scroll
+        const header = document.querySelector('.header');
+        const heroSection = document.querySelector('.hero-section');
+        const logoWhite = document.querySelector('.navbar-logo-white');
+        const logoBlack = document.querySelector('.navbar-logo-black');
+        const mobileMenuHeader = document.querySelector('.mobile-menu-active');
+
+        const changeNavbarOptions = {
+            rootMargin: "160px",
+            threshold: 0
+        };
+
+        const changeNavbarOnScroll = new IntersectionObserver(function(
+            entries) {
+            entries.forEach(entry => {
+                if(entry.isIntersecting) {        
+                    header.classList.add("transparent");
+                    header.classList.remove("white");
+                    logoWhite.classList.toggle("visible");
+                    logoBlack.classList.toggle("visible");
+
+                } else {
+                    header.classList.remove("transparent");
+                    header.classList.add("white");
+                    logoWhite.classList.toggle("visible");
+                    logoBlack.classList.toggle("visible");
+                }
+            });
+        },
+        changeNavbarOptions);
+
+        changeNavbarOnScroll.observe(heroSection);
+        </script>
+    </body>
+  </html>
