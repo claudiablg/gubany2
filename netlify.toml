@@ -1,0 +1,8 @@
+[build]
+  command = "npm run build"
+  functions = "/"
+
+[[redirects]]
+from= "/*"
+to = "/"
+statuts = 200
