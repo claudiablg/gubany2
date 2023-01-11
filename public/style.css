@@ -10,9 +10,12 @@ html, body {
     padding: 0;
     height: 100%;
     overflow: hidden;
+    /* height: -webkit-fill-available; */
+    min-height: -webkit-fill-available;
 }
 
 html {
+    overflow-y: hidden;
     overflow-x: hidden;
     font-size: 62.5%;
     scroll-behavior: smooth;
@@ -29,8 +32,9 @@ html {
 
 body {
     position: relative;
-    display: flex;
-    flex-direction: column;
+    display: block;
+    /* display: flex;
+    flex-direction: column; */
     width: 100%;
     height: auto;
     min-height: 100%;
@@ -215,8 +219,8 @@ a.link {
 }
 
 a.underline {
-    line-height: 1.5;
-    margin: 0.25em 0;
+    /* line-height: 1.5; */
+    /* margin: 0.25em 0; */
     border-bottom: 1px solid  #544F49;
 }
 
@@ -321,6 +325,10 @@ em {
 
 @media only screen and (min-width: 1008px) and (orientation: landscape){
 
+    a.underline {
+        /* line-height: 1.5; */
+        margin: 0.25em 0;
+    }
     h1 {
         font-size: 4.8rem;
     }    
@@ -420,6 +428,14 @@ em {
     margin: 6px 4px;
 }
 
+.header.transparent.mobile-menu-active .menu-btn div {
+    display: block;
+    width: 22px;
+    height: 1px;
+    background-color: var(--color-black);
+    margin: 6px 4px;
+}
+
 .header.transparent .menu-btn div {
     background-color: var(--color-white);
 }
@@ -447,9 +463,12 @@ em {
     background-color: transparent;
 }
 
+.navbar-active.transparent.mobile-menu-active {
+    color: var(--color-black);
+}
 
 .navbar-active.white {
-    position: sticky;
+    position: fixed;
     top: 0;
     left: 0;
     color: var(--color-black);
@@ -460,7 +479,7 @@ em {
 .services .header-nav.navbar-active.white, 
 .contact .header-nav.navbar-active.white {
     background-color: var(--color-white);
-    position: sticky;
+    position: fixed;
     top: 0;
     left: 0;
     z-index: 100;
@@ -489,7 +508,6 @@ em {
 .about .navbar-logo-white, .services .navbar-logo-white, .contact .navbar-logo-white {
     display: none;
 }
-
 
 .label {
     padding: 0.25em 4em;
@@ -546,6 +564,7 @@ em {
         z-index: 10;
         height: 100vh;
         overflow: hidden;
+        touch-action: none;
     }
 
     .header .menu-btn.close div {
@@ -685,6 +704,15 @@ em {
     object-position: top center;
 }
 
+
+body .home {
+    width: 100%;
+    max-width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+
 /**
 ***     HOME PAGE
 **/
@@ -693,9 +721,10 @@ main {
     width: 100%;
     min-height: 100%;
     height: 100vh;
-    overflow-y: scroll;
+    /* overflow-y: scroll; */
     overflow-x: hidden;
     perspective: 100vh;
+    height: -webkit-fill-available;
 }
 
 
@@ -718,8 +747,12 @@ h1.hero-text::selection {
 
 div.parallax {
     min-height: 100vh;
+    /* position: absolute;
+    top: 0; */
+    display: block;
     position: relative;
     transform-style: preserve-3d;
+    min-height: -webkit-fill-available;
     background-color:rgba(0, 0, 0, 0.25);
     padding-bottom: 10%;
 }
@@ -731,13 +764,19 @@ div.parallax:after {
     background-size: cover;
     position: absolute;
     top: 0px;
+    display: block;
     left: 0px;
     right: 0px;
     bottom: 0px;
     content: "";
+    min-height: -webkit-fill-available;
     z-index: 99999;
-    transform: translateZ(-90vh) scale(2.1);
+    transform: translateZ(-100vh) scale(2.1);
     transform-style: preserve-3d;
+    -webkit-transform: translateZ(-100vh) scale(2.1);
+    -moz-transform: translateZ(-100vh) scale(2.1);
+    -ms-transform: translateZ(-100vh) scale(2.1);
+    -o-transform: translateZ(-100vh) scale(2.1);
 }
     
 
@@ -750,12 +789,18 @@ div.parallax:after {
     }
 
     div.parallax {
+        /* margin-top: -10vh; */
+        /* padding-top: -10vh; */
         min-height: 50vh;
     } 
 
     div.parallax:after {
         transform: translateZ(-50vh) scale(2.1);
-    }
+        -webkit-transform: translateZ(-50vh) scale(2.1);
+        -moz-transform: translateZ(-50vh) scale(2.1);
+        -ms-transform: translateZ(-50vh) scale(2.1);
+        -o-transform: translateZ(-50vh) scale(2.1);
+}
 }
 
 
@@ -1436,6 +1481,15 @@ div.parallax:after {
 
 /* ABOUT - Section Quote */
 
+
+body .about {
+    width: 100%;
+    max-width: 100%;
+    height: 100%;
+    /* min-height: 100vh; */
+    overflow: hidden;
+}
+
 .about .about-quote {
     display: flex;
     flex-direction: column;
@@ -1485,6 +1539,14 @@ div.parallax:after {
 
 /* Services - Services Intro */ 
 
+body .services {
+    width: 100%;
+    max-width: 100%;
+    height: 100%;
+    /* min-height: 100vh; */
+    overflow: hidden;
+}
+
 .services .services-intro {
     display: flex;
     flex-direction: column;
@@ -1493,9 +1555,11 @@ div.parallax:after {
     z-index: 1;
     perspective: 2px;
     height: auto;
-    max-height: 100%;
+    padding-top: 60px;
+    /* max-height: 100%; */
     background-color: var(--color-white);
     max-width: 100%;
+    /* max-height: 100vh; */
 }
 
 .services .services-intro .col-1 {
@@ -1518,6 +1582,7 @@ div.parallax:after {
         flex-direction: row;
         margin-bottom: 3.125em;
         max-height: 100vh;
+        padding-top: 80px;
     }
 
     .services .services-intro .col-1, .services .services-intro .col-2 {
@@ -1653,10 +1718,11 @@ div.parallax:after {
     flex-direction: column;
     position: relative;
     width: 100%;
-    min-height: 100%;
+    /* min-height: 100%; */
     background-color: var(--color-white);
     max-width: 100%;
-    min-height: 100%;
+    max-height: 100vh;
+    /* min-height: 100%; */
 }
 
 .services .services-section .container {
@@ -1769,17 +1835,24 @@ li.link-list-item + li.link-list-item {
     max-width: 100%;
 }
 
+@media screen and (min-width: 768px){
+    .services .services-section {
+        min-height: 100%;
+    }
+}
+
 
 @media screen and (min-width: 1008px) {
     
     .services .services-section {
         flex-direction: row;
         flex-direction: row;
-        /* max-height: 100vh; */
+        max-height: 100%;
     }
 
     .services .services-section .container {
         width: 80%;
+        /* min-height: 100%; */
         margin: 0 auto;
     }
     
@@ -1849,8 +1922,13 @@ li.link-list-item + li.link-list-item {
 body .contact {
     width: 100%;
     max-width: 100%;
+    height: 100vh;
     min-height: 100vh;
     overflow: hidden;
+}
+
+.body .contact .main-container{
+    height: 100vh;
 }
 
 .contact .contact-info {
@@ -1858,12 +1936,12 @@ body .contact {
     position: relative;
     display: flex;
     flex-direction: column;
-    min-height: 100%;
+    /* min-height: 100%; */
     background-color: var(--color-white);
     max-width: 100%;
     align-content: center;
     margin: 0 auto;
-    margin: 1.25em 2.5em 1.25em 2.5em;
+    margin: 2.5em 1.25em 2.5em 1.25em;
 }
 
 .contact .contact-info p ~ p {
@@ -1902,7 +1980,7 @@ body .contact {
 
 .detail-wrapper {
     text-align: left;
-    margin-bottom: 24px;
+    margin-top: 24px;
 }
 
 .detail-wrapper:nth-child(2){
@@ -1925,7 +2003,7 @@ body .contact {
     
     .contact .contact-info {
         flex-direction: row-reverse;
-        min-height: calc(100vh - calc(80px + 120px + 2.25em));
+        min-height: calc(100vh - calc(80px + 120px));
     }
 
     .contact .contact-info .container {
@@ -2061,10 +2139,9 @@ body .contact {
 
 .footer-copyright {
     width: 100%;
-    padding-top: 1.25em;
+    padding-top: 2.5em;
     text-transform: uppercase;
 }
-
 
 
 .footer li {
@@ -2136,6 +2213,7 @@ body .contact {
 
     .footer-copyright {
         text-align: center;
+        padding-top: 1.25em;
     }
 }
 
@@ -2220,6 +2298,6 @@ img {
 .background-color {
     position: relative;
     width: 100%;
-    height: auto;
+    /* height: auto; */
     background-color: var(--color-beige-light);
 }

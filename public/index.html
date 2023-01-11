@@ -6,7 +6,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="description" content="Demo Project">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <!-- <base href="/"> -->
+        <base href="/">
 
         <link rel="icon" type="image/x-icon" href="favicon.ico">
 
@@ -103,7 +103,7 @@
                         </ul>
                     </div>
                     <div class="footer-copyright">
-                        © Gubany 2022. All rights reserved.
+                        © Gubany 2022. Tous droits réservés.
                     </div>
                 </footer>  
             </main>
@@ -116,6 +116,7 @@
             //hamburger menu navbar
             const headerNav = document.querySelector('.header-nav');
             const menu = document.querySelector('.menu-btn');
+            const mobileMenuActive = document.querySelector('.mobile-menu-active');
             const mobileTransparent= document.querySelector('.transparent');
             const mobileWhite= document.querySelector('.white');
             const mobileHeader = document.querySelector('.header');
@@ -125,23 +126,34 @@
             menu.addEventListener('click', () => {
                 headerNav.classList.toggle('mobile-menu-active');
                 if(mobileTransparent){
+                    console.log('transparent')
                     mobileHeader.classList.toggle('mobile-menu-active');
-                    menu.classList.toggle('close');
-                    logoWhite.classList.toggle('visible');
-                    logoBlack.classList.toggle('visible');
-                    console.log('hello')
+                    if(mobileWhite && !mobileMenuActive){
+                        menu.classList.toggle('close');
+                        logoWhite.classList.toggle('visible');
+                        logoBlack.classList.toggle('visible');
+                        if(mobileHeader){
+                            logoWhite.classList.toggle('visible');
+                            logoBlack.classList.toggle('visible');
+                               }
+
+                    }
                     return;
                 }
                 else if(mobileWhite){
+                    console.log('white');
+                    headerNav.classList.toggle('mobile-menu-active');
                     mobileHeader.classList.toggle('mobile-menu-active');
+                    // logoWhite.classList.toggle('visible');
+                    // logoBlack.classList.toggle('visible');
                     menu.classList.toggle('close');
                     // logoWhite.classList.toggle('visible');
                     // logoBlack.classList.toggle('visible');
                 }
                 else {
-                    console.log('hi')
+                    console.log('black');
                     mobileHeader.classList.toggle('mobile-menu-active');
-                    menu.classList.toggle('close');
+                    // menu.classList.toggle('close');
                     // logoWhite.classList.toggle('visible');
                     // logoBlack.classList.toggle('visible');
                 }             
@@ -162,13 +174,13 @@
         const mobileMenuHeader = document.querySelector('.mobile-menu-active');
 
         const changeNavbarOptions = {
-            rootMargin: "160px",
-            threshold: 0
+            rootMargin: "20%",
         };
 
         const changeNavbarOnScroll = new IntersectionObserver(function(
             entries) {
             entries.forEach(entry => {
+                console.log(entry.isIntersecting)
                 if(entry.isIntersecting) {        
                     header.classList.add("transparent");
                     header.classList.remove("white");

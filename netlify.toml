@@ -1,8 +1,11 @@
+
+
 [[redirects]]
-from= "/*"
-to = "/"
-statuts = 200
+    from= "/a-propos"
+    to = "a-propos.html"
+    statuts = 200
+
 [[redirects]]
-from= "gubany.netlify.app"
-to = "https://www.gubany.com"
-statuts = 200
+    from= "gubany.netlify.app"
+    to = "https://www.gubany.com"
+    statuts = 200
