@@ -20,7 +20,7 @@
     </head>
     <body class="home">
         <div class="main-container">
-            <nav class="header navbar-active transparent">
+            <nav id="nav" class="header navbar-active transparent">
                 <a class="logo" href="/">
                     <div>
                         <img class="navbar-logo-black visible" src="./images/gubany-logo-black.svg"/><img class="navbar-logo-white" src="./images/gubany-logo-white.svg"></img>
@@ -114,49 +114,37 @@
         $(document).ready(function(){
         
             //hamburger menu navbar
+            const nav = document.getElementById('nav');
             const headerNav = document.querySelector('.header-nav');
             const menu = document.querySelector('.menu-btn');
-            const mobileMenuActive = document.querySelector('.mobile-menu-active');
-            const mobileTransparent= document.querySelector('.transparent');
-            const mobileWhite= document.querySelector('.white');
             const mobileHeader = document.querySelector('.header');
             const logoWhite = document.querySelector('.navbar-logo-white');
             const logoBlack = document.querySelector('.navbar-logo-black');
 
-            menu.addEventListener('click', () => {
+            menu.addEventListener('click', (e) => {   
+                nav.className.toUpperCase() === "HEADER NAVBAR-ACTIVE TRANSPARENT MOBILE-MENU-ACTIVE"
                 headerNav.classList.toggle('mobile-menu-active');
-                if(mobileTransparent){
-                    console.log('transparent')
-                    mobileHeader.classList.toggle('mobile-menu-active');
-                    if(mobileWhite && !mobileMenuActive){
-                        menu.classList.toggle('close');
-                        logoWhite.classList.toggle('visible');
-                        logoBlack.classList.toggle('visible');
-                        if(mobileHeader){
-                            logoWhite.classList.toggle('visible');
-                            logoBlack.classList.toggle('visible');
-                               }
+                mobileHeader.classList.toggle('mobile-menu-active');
+                menu.classList.toggle('close');
+
+                console.log(e.target)
+                if(e.target.className.toUpperCase() === 'MENU-BTN CLOSE'){
+                    if(nav.className.toUpperCase() === "HEADER NAVBAR-ACTIVE TRANSPARENT MOBILE-MENU-ACTIVE"){
+                        logoBlack.classList.add('visible');
+                        logoWhite.classList.remove('visible');
 
                     }
-                    return;
+                    if(nav.className.toUpperCase() === "HEADER NAVBAR-ACTIVE WHITE MOBILE-MENU-ACTIVE"){
+                        logoBlack.classList.add('visible');
+                        logoWhite.classList.remove('visible');
+                    }
                 }
-                else if(mobileWhite){
-                    console.log('white');
-                    headerNav.classList.toggle('mobile-menu-active');
-                    mobileHeader.classList.toggle('mobile-menu-active');
-                    // logoWhite.classList.toggle('visible');
-                    // logoBlack.classList.toggle('visible');
-                    menu.classList.toggle('close');
-                    // logoWhite.classList.toggle('visible');
-                    // logoBlack.classList.toggle('visible');
-                }
-                else {
-                    console.log('black');
-                    mobileHeader.classList.toggle('mobile-menu-active');
-                    // menu.classList.toggle('close');
-                    // logoWhite.classList.toggle('visible');
-                    // logoBlack.classList.toggle('visible');
-                }             
+                else if(e.target.className.toUpperCase() === 'MENU-BTN'){
+                    if(nav.className.toUpperCase() === "HEADER NAVBAR-ACTIVE TRANSPARENT"){
+                        logoBlack.classList.remove('visible');
+                        logoWhite.classList.add('visible');
+                    }
+                }       
 
             })
 
@@ -180,7 +168,6 @@
         const changeNavbarOnScroll = new IntersectionObserver(function(
             entries) {
             entries.forEach(entry => {
-                console.log(entry.isIntersecting)
                 if(entry.isIntersecting) {        
                     header.classList.add("transparent");
                     header.classList.remove("white");
