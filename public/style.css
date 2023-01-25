@@ -1875,7 +1875,7 @@ li.link-list-item + li.link-list-item {
 
     .services .services-section .container {
         width: 80%;
-        /* min-height: 100%; */
+       min-height: 100%;
         margin: 0 auto;
     }
     
