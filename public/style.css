@@ -1919,11 +1919,11 @@ li.link-list-item + li.link-list-item {
 
     .services .services-section .container {
         width: 80%;
+        flex-wrap: wrap;
         display: flex;
         flex-direction: column;
         justify-items: stretch;
-        margin: auto;
-        /* min-height: 100%; */
+        margin: 0 auto;
     }
 }
 
@@ -1932,7 +1932,6 @@ li.link-list-item + li.link-list-item {
     
     .services .services-section {
         flex-direction: row;
-        min-height: 100%;
     }
 
     .services .services-section .col-1 {
