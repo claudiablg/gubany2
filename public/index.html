@@ -126,8 +126,7 @@
             const logoBlack = document.querySelector('.navbar-logo-black');
 
             menu.addEventListener('click', (e) => {   
-                mainContainer.style.touchAction = 'none';
-                mainContainer.style.overflow = 'none';
+
                 nav.className.toUpperCase() === "HEADER NAVBAR-ACTIVE TRANSPARENT MOBILE-MENU-ACTIVE"
                 headerNav.classList.toggle('mobile-menu-active');
                 mobileHeader.classList.toggle('mobile-menu-active');
@@ -136,6 +135,8 @@
 
                 console.log(e.target)
                 if(e.target.className.toUpperCase() === 'MENU-BTN CLOSE'){
+                    mainContainer.style.touchAction = 'none';
+                    mainContainer.style.overflow = 'none';
                     if(nav.className.toUpperCase() === "HEADER NAVBAR-ACTIVE TRANSPARENT MOBILE-MENU-ACTIVE"){
                         
                         logoBlack.classList.add('visible');
