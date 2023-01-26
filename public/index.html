@@ -135,19 +135,21 @@
 
                 console.log(e.target)
                 if(e.target.className.toUpperCase() === 'MENU-BTN CLOSE'){
-                    homeBody.style.display = 'block';
+
                     if(nav.className.toUpperCase() === "HEADER NAVBAR-ACTIVE TRANSPARENT MOBILE-MENU-ACTIVE"){
-                        
+                        homeBody.style.display = 'block';
                         logoBlack.classList.add('visible');
                         logoWhite.classList.remove('visible');
                     }
                     if(nav.className.toUpperCase() === "HEADER NAVBAR-ACTIVE WHITE MOBILE-MENU-ACTIVE"){
+                        homeBody.style.display = 'block';
                         logoBlack.classList.add('visible');
                         logoWhite.classList.remove('visible');
                     }
                 }
                 else if(e.target.className.toUpperCase() === 'MENU-BTN'){
                     if(nav.className.toUpperCase() === "HEADER NAVBAR-ACTIVE TRANSPARENT"){
+                        homeBody.style.display = 'block';
                         logoBlack.classList.remove('visible');
                         logoWhite.classList.add('visible');
                     }
