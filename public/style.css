@@ -31,7 +31,6 @@ html {
     bottom: 0;
     left: 0;
     right: 0;
-    /* height: 100vh; */
     overflow: auto;
 }
 
@@ -39,11 +38,9 @@ body {
     /* position: relative; */
     position: fixed;
     width: 100%;
-    height: auto;
-    min-height: 100%;
-    -ms-overflow-style: none;  /* IE 10+ */
-    overflow: -moz-scrollbars-none;  /* Firefox */
-    overscroll-behavior-y: none;
+    height: 100%;
+    /* height: -webkit-fill-available; */
+    min-height: -webkit-fill-available;
 }
 
 body::-webkit-scrollbar {
@@ -410,7 +407,8 @@ em {
         "logo menu-button" 60px
         "nav nav" 1fr/1fr 32px;
     overflow: hidden;
-    position: relative;
+    position: fixed;
+    top: 0;
     z-index: 100;
     /* -webkit-transform: translate3d(0,0,0); */
 }
