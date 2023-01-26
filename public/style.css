@@ -753,8 +753,8 @@ h1.hero-text::selection {
 }
 
 div.parallax {
-    min-height: 100vh;
-    height: 100%;
+    min-height: 50vh;
+    height: 100vh;
     transform-style: preserve-3d;
     background-attachment: fixed;
     margin-top: -10vh;
@@ -767,10 +767,10 @@ div.parallax:after {
     background-image: url("/images/hero.jpg");
     background-repeat: no-repeat;
     background-position: center;
-    background-attachment: fixed;
+    /* background-attachment: fixed; */
     background-size: cover;
     position: absolute;
-    top: -20px;
+    top: -10vh;
     left: 0px;
     right: 0px;
     bottom: 0px;
@@ -791,16 +791,18 @@ div.parallax:after {
     h1.hero-text {
         left: 0.5em;
         right: 0.5em;
-        /* bottom: 5%; */
+        bottom: 5%;
     }
 
     div.parallax {
+        height: 70vh;
         /* margin-top: -10vh; */
         /* padding-top: -10vh; */
         min-height: 50vh;
     } 
 
     div.parallax:after {
+        height: 100%;
         transform: translateZ(-50vh) scale(2.1);
         -webkit-transform: translateZ(-50vh) scale(2.1);
         -moz-transform: translateZ(-50vh) scale(2.1);
