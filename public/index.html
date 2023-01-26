@@ -117,7 +117,7 @@
         $(document).ready(function(){
         
             //hamburger menu navbar
-            const mainContainer = document.getElementsByClassName('main-container');
+            const homeBody = document.getElementsByClassName('home');
             const nav = document.getElementById('nav');
             const headerNav = document.querySelector('.header-nav');
             const menu = document.querySelector('.menu-btn');
@@ -135,8 +135,7 @@
 
                 console.log(e.target)
                 if(e.target.className.toUpperCase() === 'MENU-BTN CLOSE'){
-                    // mainContainer.style.touchAction = 'none';
-                    // mainContainer.style.overflow = 'none';
+                    homeBody.style.display = 'block';
                     if(nav.className.toUpperCase() === "HEADER NAVBAR-ACTIVE TRANSPARENT MOBILE-MENU-ACTIVE"){
                         
                         logoBlack.classList.add('visible');

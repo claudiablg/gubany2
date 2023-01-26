@@ -41,7 +41,7 @@ html {
 
 body {
     position: relative;
-    display: block;
+    /* display: block; */
     width: 100%;
     height: auto;
     min-height: 100%;
