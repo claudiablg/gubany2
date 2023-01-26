@@ -117,7 +117,8 @@
         $(document).ready(function(){
         
             //hamburger menu navbar
-            const homeBody = document.getElementsByClassName('home');
+            const homeBody = document.getElementsByClassName('home')[0];
+            console.log(homeBody);
             const nav = document.getElementById('nav');
             const headerNav = document.querySelector('.header-nav');
             const menu = document.querySelector('.menu-btn');
@@ -149,7 +150,7 @@
                 }
                 else if(e.target.className.toUpperCase() === 'MENU-BTN'){
                     if(nav.className.toUpperCase() === "HEADER NAVBAR-ACTIVE TRANSPARENT"){
-                        homeBody.style.display = 'block';
+                        // homeBody.style.display = 'block';
                         logoBlack.classList.remove('visible');
                         logoWhite.classList.add('visible');
                     }
