@@ -118,7 +118,7 @@
         
             //hamburger menu navbar
             const homeBody = document.getElementsByClassName('home')[0];
-            console.log(homeBody);
+            const mainContainer = document.getElementsByClassName('main-container')[0];
             const nav = document.getElementById('nav');
             const headerNav = document.querySelector('.header-nav');
             const menu = document.querySelector('.menu-btn');
@@ -141,6 +141,9 @@
                         homeBody.style.display = 'block';
                         homeBody.style.overflow = 'hidden';
                         homeBody.style.touchAction = 'none';
+                        mainContainer.style.display = 'block';
+                        mainContainer.style.overflow = 'hidden';
+                        mainContainer.style.touchAction = 'none';
 
                         logoBlack.classList.add('visible');
                         logoWhite.classList.remove('visible');
@@ -149,7 +152,10 @@
                         homeBody.style.display = 'block';
                         homeBody.style.overflow = 'hidden';
                         homeBody.style.touchAction = 'none';
-
+                        mainContainer.style.display = 'block';
+                        mainContainer.style.overflow = 'hidden';
+                        mainContainer.style.touchAction = 'none';
+                        
                         logoBlack.classList.add('visible');
                         logoWhite.classList.remove('visible');
                     }
