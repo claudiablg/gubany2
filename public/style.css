@@ -34,10 +34,10 @@ html {
     overflow: auto;
 }
 
-/* .main-container > .mobile-menu-active {
-    overflow: none;
+.main-container > .mobile-menu-active {
+    overflow: hidden;
     touch-action: none;
-} */
+}
 
 body {
     position: relative;
