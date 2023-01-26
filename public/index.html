@@ -138,9 +138,6 @@
                 if(e.target.className.toUpperCase() === 'MENU-BTN CLOSE'){
 
                     if(nav.className.toUpperCase() === "HEADER NAVBAR-ACTIVE TRANSPARENT MOBILE-MENU-ACTIVE"){
-                        homeBody.style.display = 'block';
-                        homeBody.style.overflow = 'hidden';
-                        homeBody.style.touchAction = 'none';
                         mainContainer.style.display = 'block';
                         mainContainer.style.overflow = 'hidden';
                         mainContainer.style.touchAction = 'none';
@@ -149,13 +146,10 @@
                         logoWhite.classList.remove('visible');
                     }
                     if(nav.className.toUpperCase() === "HEADER NAVBAR-ACTIVE WHITE MOBILE-MENU-ACTIVE"){
-                        homeBody.style.display = 'block';
-                        homeBody.style.overflow = 'hidden';
-                        homeBody.style.touchAction = 'none';
                         mainContainer.style.display = 'block';
                         mainContainer.style.overflow = 'hidden';
                         mainContainer.style.touchAction = 'none';
-                        
+
                         logoBlack.classList.add('visible');
                         logoWhite.classList.remove('visible');
                     }

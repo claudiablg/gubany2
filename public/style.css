@@ -41,7 +41,6 @@ html {
 
 body {
     position: relative;
-    /* display: block; */
     width: 100%;
     height: auto;
     min-height: 100%;
@@ -802,6 +801,7 @@ div.parallax:after {
         height: 70vh;
         /* margin-top: -10vh; */
         /* padding-top: -10vh; */
+        margin-top: -20vh;
         min-height: 50vh;
     } 
 
@@ -1958,11 +1958,16 @@ li.link-list-item + li.link-list-item {
 /* CONTACT - Section Contact */
 
 body .contact {
+    display: block;
     width: 100%;
     max-width: 100%;
     height: 100vh;
-    min-height: 100vh;
+    /* min-height: 100vh; */
     overflow: hidden;
+}
+
+.contact .text-content {
+    margin: auto;
 }
 
 .body .contact .main-container{
@@ -1978,7 +1983,7 @@ body .contact {
     background-color: var(--color-white);
     max-width: 100%;
     align-content: center;
-    margin: 0 auto;
+    margin: auto;
     margin: 2.5em 1.25em 2.5em 1.25em;
 }
 
@@ -1994,7 +1999,7 @@ body .contact {
     margin: 0 auto;
     padding: 2.5em 0;
     vertical-align: middle;
-    max-height: 100%;
+    /* max-height: 100%; */
 }
 
 
@@ -2094,62 +2099,6 @@ body .contact {
         max-width: 35.75em;
     }
 }
-
-/* Section Contact Hero */
-
-.contact .contact-section {
-    height: auto;
-    padding-bottom: 50%;
-    background-image: url('/images/contact-hero.jpeg');
-    position: relative;
-    background-position: 0 25%; 
-    background-repeat: no-repeat; 
-    background-size: cover;  
-    height: 75vmin;
-}
-
-.contact .contact-section a {
-    position: absolute;
-    top:0;
-    left: 0;
-    height: 100%;
-    z-index: 1;
-}
-
-.contact .contact-section h4 {
-    color: var(--color-white);
-    position: absolute;
-    text-transform: uppercase;
-    font-weight: 400;
-    position: absolute;
-    margin-left: auto;
-    margin-right: auto;
-    left: 0;
-    right: 0;
-    text-align: center;
-}
-
-.contact .contact-section::before {    
-    content: "";
-    position: absolute;
-    background-position: center; 
-    background-repeat: no-repeat; 
-    background-size: cover; 
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background-color:rgba(0, 0, 0, 0.2);
-}
-
-@media screen and (min-width: 1008px)  and (orientation: landscape){
-
-    .contact .contact-section {
-        height: auto; 
-        padding-bottom: 40%;
-    }
-}
-
 
 /* Footer */
 
