@@ -27,13 +27,11 @@ html {
 
 .main-container {
     
-    -webkit-overflow-scrolling: touch; /* enables “momentum” (smooth) scrolling */
     position: absolute;
     top: 0;
     bottom: 0;
     left: 0;
     right: 0;
-    -webkit-overflow-scrolling: touch;
     height: 100vh;
     overflow: auto;
 }
@@ -768,7 +766,6 @@ div.parallax {
 }
 
 div.parallax:after {
-    -webkit-overflow-scrolling: touch; /* enables “momentum” (smooth) scrolling */
     background-image: url("/images/hero.jpg");
     background-repeat: no-repeat;
     background-position: center;
@@ -800,14 +797,12 @@ div.parallax:after {
     }
 
     div.parallax {
-        -webkit-overflow-scrolling: touch; /* enables “momentum” (smooth) scrolling */
         /* margin-top: -10vh; */
         /* padding-top: -10vh; */
         min-height: 50vh;
     } 
 
     div.parallax:after {
-        -webkit-overflow-scrolling: touch; /* enables “momentum” (smooth) scrolling */
         transform: translateZ(-50vh) scale(2.1);
         -webkit-transform: translateZ(-50vh) scale(2.1);
         -moz-transform: translateZ(-50vh) scale(2.1);
