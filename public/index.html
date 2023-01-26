@@ -139,11 +139,17 @@
 
                     if(nav.className.toUpperCase() === "HEADER NAVBAR-ACTIVE TRANSPARENT MOBILE-MENU-ACTIVE"){
                         homeBody.style.display = 'block';
+                        homeBody.style.overflow = 'hidden';
+                        homeBody.style.touchAction = 'none';
+
                         logoBlack.classList.add('visible');
                         logoWhite.classList.remove('visible');
                     }
                     if(nav.className.toUpperCase() === "HEADER NAVBAR-ACTIVE WHITE MOBILE-MENU-ACTIVE"){
                         homeBody.style.display = 'block';
+                        homeBody.style.overflow = 'hidden';
+                        homeBody.style.touchAction = 'none';
+
                         logoBlack.classList.add('visible');
                         logoWhite.classList.remove('visible');
                     }
