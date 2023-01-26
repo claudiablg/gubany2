@@ -40,6 +40,7 @@ body {
     width: 100%;
     height: auto;
     min-height: 100%;
+    overflow: none;
     -ms-overflow-style: none;  /* IE 10+ */
     overflow: -moz-scrollbars-none;  /* Firefox */
 }
